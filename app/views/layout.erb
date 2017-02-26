@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <link rel='stylesheet' href='/css/application.css'>
+    <link rel="stylesheet" href="/css/application.css">
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
     <script src="../jquery-3.1.1.min.js"></script>
@@ -11,12 +11,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if !current_user  %>
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/sessions">login</a></li>
+        <li><a href="/users">register</a></li>
+      </ul>
+    </nav>
 
-
-    <% if current_user  %>
-      <%= erb :'sessions/logout.html'  %>
+    <% else  %>
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/sessions/logout">logout</a></li>
+    </ul>
+  </nav>
     <% end %>
+
+    <%= yield %>
 
   </body>
 </html>

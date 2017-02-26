@@ -24,7 +24,7 @@ end
 #   erb :'sessions/show.html'
 # end
 
-delete '/sessions/logout' do
+get '/sessions/logout' do
   logout
   redirect '/'
 end
