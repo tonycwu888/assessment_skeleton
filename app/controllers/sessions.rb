@@ -24,7 +24,8 @@ end
 #   erb :'sessions/show.html'
 # end
 
-get '/sessions/logout' do
+delete '/sessions/logout' do  #  need to change this to delete instead of get.... 
+  # change the nav in the layout .... into buttons or link with input tag....
   logout
   redirect '/'
 end

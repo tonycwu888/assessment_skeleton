@@ -2,12 +2,14 @@
 <html lang='en'>
   <head>
     <link rel="stylesheet" href="/css/application.css">
+    <link rel="stylesheet" href="/css/logout.css">
+
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
     <script src="../jquery-3.1.1.min.js"></script>
     <script src='/js/application.js'></script>
 
-    <title>Intro To Sinatra</title>
+    <title>checkpoint skeleton</title>
   </head>
 
   <body>
@@ -24,9 +26,23 @@
     <nav>
       <ul>
         <li><a href="/">home</a></li>
-        <li><a href="/sessions/logout">logout</a></li>
+
+        <li>
+
+          <form action="/sessions/logout" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="logout">
+          </form>
+          
+          <!-- <a href="/sessions/logout">logout</a> -->
+
+
+        </li>
     </ul>
   </nav>
+
+
+
     <% end %>
 
     <%= yield %>
